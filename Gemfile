@@ -4,4 +4,8 @@ gem 'sinatra'
 gem 'sqlite3'
 gem 'activerecord'
 gem 'sinatra-activerecord'
-gem 'simatra-contrib'
+gem 'sinatra-contrib'
+
+group :development do 
+	gem 'tux'
+end
