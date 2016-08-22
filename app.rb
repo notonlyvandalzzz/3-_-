@@ -5,7 +5,7 @@ require 'sinatra/activerecord'
 
 set :database, "sqlite3:barber.db"
 
-class Client < ActiveRecord::Base
+class ClientX < ActiveRecord::Base
 end
 
 configure do
