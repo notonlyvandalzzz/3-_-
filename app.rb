@@ -60,7 +60,7 @@ end
 
 get '/barber/:id' do
   @barber = Barbers.find(params[:id])
-  @app.list = Clients.find_by barber: @barber.id
+  @app_list = Clients.find_by barber: @barber.id
   erb :barber
 end
 
