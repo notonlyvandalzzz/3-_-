@@ -43,18 +43,20 @@ get '/appoint' do
 end
 
 post '/appoint' do
-  @username = params[:username]
-  @phone = params[:phone]
-  @datetime = params[:datetime]
-  @barber = params[:barber]
-  @color = params[:colorpicker]
+  # @username = params[:username]
+  # @phone = params[:phone]
+  # @datetime = params[:datetime]
+  # @barber = params[:barber]
+  # @color = params[:colorpicker]
 
-  c_new = Clients.new
-  c_new.name = @username
-  c_new.phone = @phone
-  c_new.datestamp = @datetime
-  c_new.barber = @barber
-  c_new.color = @color
+  c_new = Clients.new params[:clients]
+
+  # c_new = Clients.new
+  # c_new.name = @username
+  # c_new.phone = @phone
+  # c_new.datestamp = @datetime
+  # c_new.barber = @barber
+  # c_new.color = @color
   c_new.save
   redirect to '/'
 end
