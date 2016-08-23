@@ -8,6 +8,10 @@ set :database, "sqlite3:barber.db"
 class Clients < ActiveRecord::Base
 end
 
+class Barbers < ActiveRecord::Base
+end
+
+
 configure do
   enable :sessions
 end
