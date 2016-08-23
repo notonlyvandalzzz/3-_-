@@ -9,5 +9,6 @@ class CreateBarbers < ActiveRecord::Migration
   		Barbers.create :name => 'R2D2'
   		Barbers.create :name => 'C3PO'
   		Barbers.create :name => 'Yoda'
+  		end
   end
 end
