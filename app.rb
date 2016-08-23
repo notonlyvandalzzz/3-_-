@@ -6,6 +6,11 @@ require 'sinatra/activerecord'
 set :database, "sqlite3:barber.db"
 
 class Clients < ActiveRecord::Base
+  validates :name, presence: true
+  validates :phone, presence: true
+  validates :datestamp, presence: true
+  validates :barber, presence: true
+  validates :color, presence: true
 end
 
 class Barbers < ActiveRecord::Base
@@ -43,20 +48,7 @@ get '/appoint' do
 end
 
 post '/appoint' do
-  # @username = params[:username]
-  # @phone = params[:phone]
-  # @datetime = params[:datetime]
-  # @barber = params[:barber]
-  # @color = params[:colorpicker]
-
   c_new = Clients.new params[:clients]
-
-  # c_new = Clients.new
-  # c_new.name = @username
-  # c_new.phone = @phone
-  # c_new.datestamp = @datetime
-  # c_new.barber = @barber
-  # c_new.color = @color
   c_new.save
   redirect to '/'
 end
