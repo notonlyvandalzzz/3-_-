@@ -47,7 +47,7 @@ post '/appoint' do
   @phone = params[:phone]
   @datetime = params[:datetime]
   @barber = params[:barber]
-  @color = params[:color]
+  @color = params[:colorpicker]
 
   c_new = Clients.new
   c_new.name = @username
