@@ -35,6 +35,11 @@ get '/' do
   erb :index
 end
 
+get '/appoint' do
+    @barbers_app = Barbers.order "created_at DESC"
+    erb :appoint
+end
+
 get '/login/form' do
   erb :login_form
 end

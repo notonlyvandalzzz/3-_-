@@ -1,0 +1,67 @@
+<h3>Please enter required info to make an appointment</h3>
+
+<form class="form-horizontal" id="appoint_form" action="/appoint" method="POST">
+	<div class="form-group">
+    <label for="exampleInputName2" class="col-sm-2 control-label">Enter your name</label>
+    <div class="col-sm-10">
+    	<input type="text" class="form-control" id="exampleInputName2" placeholder="Your Name" name="username" size="30" required="" width="60%"  
+    	<%if @username then %>
+    		value="<%=@username%>"
+    	<% end %>
+    	>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputName2" class="col-sm-2 control-label">Enter your phone</label>
+    <div class="col-sm-10">
+    <input id="chgonclick" type="text" class="form-control" id="exampleInputName2" placeholder="8-123-456" name="phone" size="30" width="60%" required="">
+    </div>
+  </div>
+   <div class="form-group">
+    <label for="exampleInputName2" class="col-sm-2 control-label">Enter desidred date and time</label>
+    <div class="col-sm-10">
+    <input type="datetime-local" id="dtpick" name="datetime" step="3600" placeholder="Date and Time" required="">
+    </div>
+  </div>
+  <div class="form-group">
+  <label for="exampleInputName2" class="col-sm-2 control-label">Select your barber</label>
+  <div class="col-sm-10">
+    <select class="form-control" name="barber" form="appoint_form">
+    <%@barbers_app.each do |row|%>
+       <option value="<%=fow.id%>"><%=row.name%></option>
+     <%end%>
+    </select>
+  </div>
+  </div>
+  <div class="form-group">
+  <label for="exampleInputName2" class="col-sm-2 control-label">Select desired beard color</label>
+  <div class="col-sm-10">
+  <select name="colorpicker">
+	  <option value="#7bd148">Green</option>
+	  <option value="#5484ed">Bold blue</option>
+	  <option value="#a4bdfc">Blue</option>
+	  <option value="#46d6db">Turquoise</option>
+	  <option value="#7ae7bf">Light green</option>
+	  <option value="#51b749">Bold green</option>
+	  <option value="#fbd75b">Yellow</option>
+	  <option value="#ffb878">Orange</option>
+	  <option value="#ff887c">Red</option>
+	  <option value="#dc2127">Bold red</option>
+	  <option value="#dbadff">Purple</option>
+	  <option value="#e1e1e1">No color</option>
+	</select>
+  </div>
+  </div>
+  <div class="form-group">
+  <div class="col-sm-offset-2 col-sm-10">
+  <button type="submit" class="btn btn-primary">Send appointment</button>
+  </div>
+  </div>
+</form>
+<script type="text/javascript">
+//$('#chgonclick').css('background-color','#505050');
+$(function() {
+	$('select[name="colorpicker"]').simplecolorpicker('selectColor', '#e1e1e1');
+  $('#dtpick').valueAsNumber = new Date().getTime();
+});
+</script>
