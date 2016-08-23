@@ -32,7 +32,7 @@
   <div class="form-group">
   <label for="exampleInputName2" class="col-sm-2 control-label">Select desired beard color</label>
   <div class="col-sm-10">
-  <select name="clients[color]">
+  <select name="clients[color]" id="colorpicker">
 	  <option value="#7bd148">Green</option>
 	  <option value="#5484ed">Bold blue</option>
 	  <option value="#a4bdfc">Blue</option>
@@ -57,7 +57,7 @@
 <script type="text/javascript">
 //$('#chgonclick').css('background-color','#505050');
 $(function() {
-	$('select[name="colorpicker"]').simplecolorpicker('selectColor', '#e1e1e1');
+	$('select[id="colorpicker"]').simplecolorpicker('selectColor', '#e1e1e1');
   $('#dtpick').valueAsNumber = new Date().getTime();
 });
 </script>
