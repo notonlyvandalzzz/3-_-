@@ -42,6 +42,23 @@ get '/appoint' do
     erb :appoint
 end
 
+post '/appoint' do
+  @username = params[:username]
+  @phone = params[:phone]
+  @datetime = params[:datetime]
+  @barber = params[:barber]
+  @color = params[:color]
+
+  c_new = Clients.new
+  c_new.name = @username
+  c_new.phone = @phone
+  c_new.datestamp = @datetime
+  c_new.barber = @barber
+  c_new.color = @color
+  c_new.save
+  redirect to '/'
+end
+
 get '/login/form' do
   erb :login_form
 end
