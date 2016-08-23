@@ -52,7 +52,8 @@ post '/appoint' do
   if c_new.save
     redirect to '/'
   else
-    erb '<h2>Error somewhere</h2>'
+    @error = "Error somewhere:" + c_new.errors.full_messages.first
+    erb :appoint
   end
 end
 
