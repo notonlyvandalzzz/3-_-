@@ -44,15 +44,16 @@ get '/' do
 end
 
 get '/appoint' do
-    erb :appoint
+  @c_new = Clients.new
+  erb :appoint
 end
 
 post '/appoint' do
-  c_new = Clients.new params[:clients]
-  if c_new.save
+  @c_new = Clients.new params[:clients]
+  if @c_new.save
     redirect to '/'
   else
-    @error = "Error somewhere:" + c_new.errors.full_messages.first
+    @error = "Error somewhere: " + @c_new.errors.full_messages.first
     erb :appoint
   end
 end
