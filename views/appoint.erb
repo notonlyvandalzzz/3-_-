@@ -27,7 +27,7 @@
   <label for="exampleInputName2" class="col-sm-2 control-label">Select your barber</label>
   <div class="col-sm-10">
     <select class="form-control" name="barber" form="appoint_form">
-    <%@barbers_app.each do |row|%>
+    <%@barbers.each do |row|%>
        <option value="<%=row.id%>"><%=row.name%></option>
      <%end%>
     </select>

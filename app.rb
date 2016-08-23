@@ -22,6 +22,10 @@ helpers do
   end
 end
 
+before do
+  @barbers = Barbers.order "created_at DESC"
+end
+
 before '/secure/*' do
   unless session[:identity]
     session[:previous_url] = request.path
@@ -31,12 +35,10 @@ before '/secure/*' do
 end
 
 get '/' do
-  @barbers = Barbers.order "created_at DESC"
   erb :index
 end
 
 get '/appoint' do
-    @barbers_app = Barbers.order "created_at DESC"
     erb :appoint
 end
 
