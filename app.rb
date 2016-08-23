@@ -58,6 +58,10 @@ post '/appoint' do
   end
 end
 
+get '/barber/:id' do
+
+end
+
 get '/login/form' do
   erb :login_form
 end

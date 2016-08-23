@@ -1,4 +1,4 @@
 <h2>List of our barbers</h2>
 <% @barbers.each do |barber| %>
-	<div class="col-sm-10"><%=barber.name%></div><br />
+	<div class="col-sm-10"><a href="/barber/<%=barber.id%>"><%=barber.name%></a></div><br />
 <%end%>
