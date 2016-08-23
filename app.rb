@@ -49,8 +49,11 @@ end
 
 post '/appoint' do
   c_new = Clients.new params[:clients]
-  c_new.save
-  redirect to '/'
+  if c_new.save
+    redirect to '/'
+  else
+    erb '<h2>Error somewhere</h2>'
+  end
 end
 
 get '/login/form' do
