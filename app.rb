@@ -31,7 +31,7 @@ before '/secure/*' do
 end
 
 get '/' do
-  @barbers = Barbers.all
+  @barbers = Barbers.order "created-at DESC"
   erb :index
 end
 
