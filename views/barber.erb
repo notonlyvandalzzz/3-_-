@@ -1,7 +1,9 @@
 <h2>Barber page</h2>
 <p>Name: <%=@barber.name%></p>
 <p>
-<% @app_list.each do |appnt| if @app_list %>
+<%  if @app_list %>
+<% @app_list.each do |appnt| %>
 <div class="col-sm-10"><%=appnt.name%>&nbsp;at&nbsp;<%=appnt.datestamp.tr('T',' ')%></div>
+<%end%>
 <%end%>
 </p>
