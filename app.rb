@@ -70,7 +70,7 @@ get '/bookings' do
 end
 
 get '/client/:id' do
-  @client = Clients.join("inner join barbers on clients.barber=barbers.id where id=?",[params[:id]])
+  @client = Clients.joins("inner join barbers on clients.barber=barbers.id where id=?",[params[:id]])
   erb :client
 end
 
